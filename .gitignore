@@ -1,0 +1,13 @@
+# General
+.DS_Store
+
+# Certificates of Fabric
+network/certificates/
+network/artifacts/
+network/scripts/logs/
+network/bin/
+bin/
+
+chaincode/package/
+
+settings.json
