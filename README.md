@@ -1,5 +1,5 @@
 # Introduction 
-New Blockchain Project
+New Blockchain Project in Enpal
 
 # Getting Started (Network)
 To start Network run in root `sh startNetwork.sh up`
