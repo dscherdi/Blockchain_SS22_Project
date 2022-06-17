@@ -1,1 +1,1 @@
-export * from './enpalasset.repository';
+export * from './cocoarepository';
