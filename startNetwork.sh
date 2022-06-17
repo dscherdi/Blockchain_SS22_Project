@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 export PATH=${PWD}/network/bin:$PATH
 export FABRIC_CFG_PATH=${PWD}/network/configuration
 export VERBOSE=true

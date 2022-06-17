@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 setGlobals() {
   local USING_ORG=""

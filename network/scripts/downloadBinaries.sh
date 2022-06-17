@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 download() {
     local BINARY_FILE=$1
@@ -33,8 +33,8 @@ function preReq() {
     mv ./bin ./network/bin/
 }
 
-BIN_VERSION=2.3.2
-CA_VERSION=1.5.0
+BIN_VERSION=2.4.3
+CA_VERSION=1.5.3
 ARCH=$(echo "$(uname -s|tr '[:upper:]' '[:lower:]'|sed 's/mingw64_nt.*/windows/')-$(uname -m | sed 's/x86_64/amd64/g')")
 BINARY_FILE=hyperledger-fabric-${ARCH}-${BIN_VERSION}.tar.gz
 CA_BINARY_FILE=hyperledger-fabric-ca-${ARCH}-${CA_VERSION}.tar.gz

@@ -2,7 +2,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { EnpalAssetContract } from './enpal-asset-contract';
-export { EnpalAssetContract } from './enpal-asset-contract';
+import { CocoaSupplyChainContract } from './cocoa-supply-chain-contract';
+export { CocoaSupplyChainContract } from './cocoa-supply-chain-contract';
 
-export const contracts: any[] = [ EnpalAssetContract ];
+export const contracts: any[] = [ CocoaSupplyChainContract ];

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 function createOrg1() {
   echo "Enrolling the CA admin"

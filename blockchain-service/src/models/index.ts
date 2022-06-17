@@ -1,1 +1,2 @@
-export * from './enpalasset.model';
+export * from './cocoastate.model';
+export * from './cocoabag.model';

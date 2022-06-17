@@ -1,4 +1,4 @@
-  #!/bin/bash
+  #!/usr/bin/env bash
 
  # imports
  . network/scripts/envVar.sh

@@ -1,14 +1,15 @@
 'use strict';
 
-import { Gateway, Wallets, X509Identity } from 'fabric-network';
+import { Contract, Gateway, Wallets, X509Identity } from 'fabric-network';
 import FabricCAServices from 'fabric-ca-client';
 import * as fs from 'fs';
-import { Enpalasset } from '../models';
+import { CocoaBag } from '../models/cocoabag.model';
+
 const path = require('path');
 
 export class BlockchainClient {
-  gateway: any;
-  contract: any;
+  gateway: Gateway;
+  contract: Contract;
 
 
   prettyJSONString(inputString: string) {
@@ -53,14 +54,29 @@ export class BlockchainClient {
     await this.gateway.disconnect();
   }
 
-  async createAsset(id: string, value: string): Promise<Boolean> {
+  async createCocoaBag(id: string, value: string): Promise<string> {
+    if (!this.contract) {
+      await this.connect();
+    }
+
+    try {
+      var result = await this.contract.submitTransaction("createCocoaBag", id, value);
+    } catch (e) {
+      console.log("Function invoke failed" + e);
+      throw new Error('Blockchain Service couldn`t invoke chaincode function: ' + e);
+    }
+
+    return result.toString();
+  }
+
+  async updateCocoaBagState(id: string, value: string): Promise<Boolean> {
     if (!this.contract) {
       await this.connect();
     }
 
     let result: boolean = false;
     try {
-      await this.contract.submitTransaction("createEnpalAsset", id, value);
+      await this.contract.submitTransaction("updateCocoaBagState", id, value);
       result = true;
     } catch (e) {
       console.log("Function invoke failed" + e);
@@ -70,15 +86,15 @@ export class BlockchainClient {
     return result;
   }
 
-  async readEnpalAsset(id: string): Promise<Enpalasset> {
+  async readCocoaBag(id: string): Promise<CocoaBag> {
     if (!this.contract) {
       await this.connect();
     }
 
-    let asset: Enpalasset;
+    let asset: CocoaBag;
     try {
-      const res = await this.contract.evaluateTransaction("readEnpalAsset", id);
-      asset = JSON.parse(res) as Enpalasset;
+      const res = await this.contract.evaluateTransaction("readCocoaBag", id);
+      asset = JSON.parse(res.toString()) as CocoaBag;
     } catch (e) {
       console.log("Function invoke failed" + e);
       throw new Error('Blockchain Service couldn`t invoke chaincode function: ' + e);

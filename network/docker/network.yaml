@@ -18,7 +18,7 @@ services:
 
   orderer.example.com:
     container_name: orderer.example.com
-    image: hyperledger/fabric-orderer:2.3.2
+    image: hyperledger/fabric-orderer:2.4.3
     labels:
       service: hyperledger-fabric
     environment:
@@ -60,7 +60,7 @@ services:
 
   peer0.org1.example.com:
     container_name: peer0.org1.example.com
-    image: hyperledger/fabric-peer:2.3.2
+    image: hyperledger/fabric-peer:2.4.3
     labels:
       service: hyperledger-fabric
     environment:
@@ -103,7 +103,7 @@ services:
 
   peer0.org2.example.com:
     container_name: peer0.org2.example.com
-    image: hyperledger/fabric-peer:2.3.2
+    image: hyperledger/fabric-peer:2.4.3
     labels:
       service: hyperledger-fabric
     environment:
@@ -180,7 +180,7 @@ services:
 
   cli:
     container_name: cli
-    image: hyperledger/fabric-tools:2.3.2
+    image: hyperledger/fabric-tools:2.4.3
     labels:
       service: hyperledger-fabric
     tty: true
@@ -191,7 +191,7 @@ services:
       - FABRIC_LOGGING_SPEC=INFO
       #- FABRIC_LOGGING_SPEC=DEBUG
     working_dir: /opt/gopath/src/github.com/hyperledger/fabric/peer
-    command: /bin/bash
+    command: /usr/bin/env bash
     volumes:
         - /var/run/:/host/var/run/
         - ../certificates:/opt/gopath/src/github.com/hyperledger/fabric/peer/network/certificates
