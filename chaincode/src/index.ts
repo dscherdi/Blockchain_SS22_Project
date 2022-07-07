@@ -2,7 +2,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { CocoaSupplyChainContract } from './cocoa-supply-chain-contract';
-export { CocoaSupplyChainContract } from './cocoa-supply-chain-contract';
+import {AssetTransferContract} from './assetTransfer';
 
-export const contracts: any[] = [ CocoaSupplyChainContract ];
+export {AssetTransferContract} from './assetTransfer';
+
+export const contracts: any[] = [AssetTransferContract];

@@ -6,7 +6,6 @@
     "jsRules": {},
     "rules": {
         "indent": [true, "spaces", 4],
-        "linebreak-style": [true, "LF"],
         "quotemark": [true, "single"],
         "semicolon": [true, "always"],
         "no-console": false,
@@ -16,7 +15,6 @@
         "no-var-keyword": true,
         "no-trailing-whitespace": true,
         "object-literal-key-quotes": [true, "as-needed"],
-        "object-literal-sort-keys": false,
         "max-line-length": false
     },
     "rulesDirectory": []

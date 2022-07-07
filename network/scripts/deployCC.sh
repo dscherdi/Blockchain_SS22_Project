@@ -99,8 +99,8 @@ queryCommitted() {
 
 echo "Compiling TypeScript code into JavaScript..."
 pushd chaincode
-npm install
-npm run build
+yarn install
+yarn run build
 popd
 echo "Finished compiling TypeScript code into JavaScript"
 
