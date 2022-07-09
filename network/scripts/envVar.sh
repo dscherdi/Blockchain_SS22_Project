@@ -72,12 +72,12 @@ parsePeerConnectionParameters() {
 
 COMPOSE_FILE=network/docker/network.yaml
 COMPOSE_FILE_CA=network/docker/ca.yaml
-CHANNEL_NAME="mychannel"
+CHANNEL_NAME="hypercocoa"
 MAX_RETRY=5
-export CC_NAME=mycc
+export CC_NAME=hyperCC
 export CC_SRC_PATH=chaincode
-export CC_VERSION=1.11
-export CC_SEQUENCE=10
+export CC_VERSION=1.0
+export CC_SEQUENCE=1
 export DELAY=3
 export CORE_PEER_TLS_ENABLED=true
 export ORDERER_CA=${PWD}/network/certificates/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem
