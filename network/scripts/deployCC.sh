@@ -5,6 +5,7 @@
 
   packageChaincode() {
   set -x
+  rm -rf chaincode/package
   if [ ! -d "${PWD}/chaincode/package/" ]; then
     mkdir chaincode/package  
   fi

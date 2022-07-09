@@ -7,27 +7,15 @@ import {Object, Property} from 'fabric-contract-api';
 @Object()
 export class Asset {
     @Property()
-    public AssetType: "cocoaBag" | "chocolateBar";
+    public AssetType: "cocoabag" | "chocolatebar";
 
     @Property()
     public ID: string;
 
     @Property()
-    public Type: string;
+    public Refs: string;
 
     @Property()
-    public Weight: number;
-
-    @Property()
-    public FarmerName: string;
-
-    @Property()
-    public FarmLocation: string;
-
-    @Property()
-    public Price: string;
-
-    @Property()
-    public ProcessingFactory: string;
+    public Data: string;
 
 }
