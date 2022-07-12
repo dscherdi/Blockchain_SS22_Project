@@ -38,9 +38,9 @@
 
   async function fetchData() {
     try {
-      var response = await fetch("http://localhost:1337/assets", {
+      var response = await fetch("http://localhost:1337/hypercocoa/assets", {
         method: "GET", // *GET, POST, PUT, DELETE, etc.
-        mode: "no-cors", // no-cors, *cors, same-origin
+        mode: "cors", // no-cors, *cors, same-origin
         cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
         credentials: "same-origin", // include, *same-origin, omit
         headers: {
@@ -50,8 +50,11 @@
         redirect: "follow", // manual, *follow, error
         referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
       });
-      dataRows = JSON.parse(response.body);
-      dataRows = dataRows;
+      var responsePromise = await response.json();
+      responsePromise = responsePromise.filter(function (el) {
+       return el.AssetType == "cocoabag";
+});
+      dataRows = responsePromise;
     } catch (e) {
       console.error(e);
     }
